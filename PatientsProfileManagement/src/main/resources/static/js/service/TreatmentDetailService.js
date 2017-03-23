@@ -23,10 +23,18 @@ app.factory('treatmentDetailService', function($http){
 				return response.data;
 			});
 	 }
+	 
+	 var deleteFile = function(id){
+		 return $http.delete("http://localhost:8080/file/"+id)
+		  .then(function(response){
+				return response.data;
+			});
+	 }
 	 return{
 		 createTreatmentDetail:createTreatmentDetail,
 		 getAllTreatmentDetail:getAllTreatmentDetail,
 		 deleteTreatmentDetail:deleteTreatmentDetail,
+		 deleteFile:deleteFile,
 	 }
 	
 });

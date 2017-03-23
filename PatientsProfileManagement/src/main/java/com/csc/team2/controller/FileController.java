@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -73,6 +74,20 @@ public class FileController {
 	
 	public Treatment getTreatmentById(int id){
 		return tretmentService.findById(id);
+	}
+	
+	
+	
+////===================Delete file===================================
+	@RequestMapping(value="/file/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<?> deleteMedicine(@PathVariable("id") int id){
+		logger.info("Fetch & delete medicine with id {}", id);
+		File file = fileService.findById(id);
+		if(file==null){
+			logger.info("unable to delete medicine with id {}, not found",id);
+		}
+		fileService.deleteFileById(id);
+		return new ResponseEntity<Medicine>(HttpStatus.NO_CONTENT);
 	}
 	
 //	@RequestMapping(value = "/upload" , method = RequestMethod.POST)

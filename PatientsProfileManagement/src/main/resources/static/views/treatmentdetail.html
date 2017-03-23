@@ -12,127 +12,138 @@
 
 <section class="content">
 	<div class="row">
-      <!-- Patient's Information -->
-      <div class="col-md-6">
-         <div class="box box-success">
-            <div class="box-header with-border">
-               <i class="fa fa-warning"></i>
-               <h3 class="box-title">Patient's Information</h3>
-            </div>
-            <!-- /.box-header -->
-            <form class="form-horizontal">
-               <div class="box-body">
-                  <div class="form-group">
-                     <label class="col-sm-3 control-label">Patient's name</label>
-                     <div class="col-sm-9">
-                        <input class="form-control" ng-model="treatment.patientId.name" disabled="disabled" type="text" >
-                     </div>
-                  </div>
-				  <div class="form-group">
-                     <label class="col-sm-3 control-label">Address</label>
-                     <div class="col-sm-9">
-                        <input class="form-control" ng-model="treatment.patientId.address" disabled="disabled" type="text">
-                     </div>
-                  </div>
-				  <div class="form-group">
-                     <label class="col-sm-3 control-label">Date of Birth</label>
-                     <div class="col-sm-9">
-                        <input class="form-control" ng-model="treatment.patientId.dob" disabled="disabled" type="date">
-                     </div>
-                  </div>
-				  <div class="form-group">
-                     <label class="col-sm-3 control-label">Sex</label>
-                     <div class="col-sm-9">
-                        <input class="form-control" ng-model="treatment.patientId.sex" disabled="disabled" type="text" >
-                     </div>
-                  </div>
-               </div>
-               <!-- /.box-footer -->
-            </form>
-            <!-- /.box-body -->
-         </div>
-         <!-- /.box -->
-      </div>
-      <!-- /.col -->
-      
-      
-      <!-- Doctor's Information -->
-      <div class="col-md-6">
-         <div class="box box-success">
-            <div class="box-header with-border">
-               <i class="fa fa-bullhorn"></i>
-               <h3 class="box-title">Doctor's Information</h3>
-            </div>
-            <!-- /.box-header -->
-            <form class="form-horizontal">
-               <div class="box-body">
-                  <div class="form-group">
-                     <label class="col-sm-3 control-label">Doctor's Name</label>
-                     <div class="col-sm-9">
-                        <input class="form-control" ng-model="treatment.doctorId.name" disabled="disabled" type="text" >
-                     </div>
-                  </div>
-				  <div class="form-group">
-                     <label class="col-sm-3 control-label">Address</label>
-                     <div class="col-sm-9">
-                        <input class="form-control" ng-model="treatment.doctorId.specialist" disabled="disabled" type="text" >
-                     </div>
-                  </div>
-				  <div class="form-group">
-                     <label class="col-sm-3 control-label">Specialist</label>
-                     <div class="col-sm-9">
-                        <input class="form-control" ng-model="treatment.doctorId.name" disabled="disabled" type="text" >
-                     </div>
-                  </div>
-				  <div class="form-group">
-                     <label class="col-sm-3 control-label">Sex</label>
-                     <div class="col-sm-9">
-                        <input class="form-control" ng-model="treatment.doctorId.sex" disabled="disabled" type="text" >
-                     </div>
-                  </div>
-               </div>
-               <!-- /.box-footer -->
-            </form>
-            <!-- /.form-body -->
-         </div>
-      </div>
-      <!-- /.col -->
-   </div>
-   
-   
-   <!-- ====== Medicine List ====== -->
-   <div class="row">
-   		<div class="col-md-6">
-			 <div class="box box-success">
+		<!-- Patient's Information -->
+		<div class="col-md-6">
+			<div class="box box-success">
 				<div class="box-header with-border">
-				   <i class="fa fa-bullhorn"></i>
-				   <h3 class="box-title">Prescription Drug List</h3>
+					<i class="fa fa-warning"></i>
+					<h3 class="box-title">Patient's Information</h3>
 				</div>
 				<!-- /.box-header -->
 				<form class="form-horizontal">
-				   <div class="box-body">
-					  <div class="form-group">
-						 <md-content class="md-padding autocomplete col-md-10"
-							layout="column"> <md-contact-chips
-							ng-model="medicines" md-contacts="querySearch($query)"
-							md-contact-name="name" md-require-match="true"
-							md-highlight-flags="i" filter-selected="filterSelected"
-							placeholder="Enter name medicne"> </md-contact-chips> </md-content>
-					  </div>
-				   </div>
-				   <!-- /.box-body -->
-				   <div class="box-footer">
-					  <button type="reset" class="btn btn-default">Reset</button>
-					  <button type="submit" ng-click="createTreatmentDetail()" class="btn btn-success pull-right">Add Medicine</button>
-				   </div>
-				   <!-- /.box-footer -->
+					<div class="box-body">
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Patient's name</label>
+							<div class="col-sm-9">
+								<input class="form-control" ng-model="treatment.patientId.name"
+									disabled="disabled" type="text">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Address</label>
+							<div class="col-sm-9">
+								<input class="form-control"
+									ng-model="treatment.patientId.address" disabled="disabled"
+									type="text">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Date of Birth</label>
+							<div class="col-sm-9">
+								<input class="form-control" ng-model="treatment.patientId.dob"
+									disabled="disabled" type="date">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Sex</label>
+							<div class="col-sm-9">
+								<input class="form-control" ng-model="treatment.patientId.sex"
+									disabled="disabled" type="text">
+							</div>
+						</div>
+					</div>
+					<!-- /.box-footer -->
+				</form>
+				<!-- /.box-body -->
+			</div>
+			<!-- /.box -->
+		</div>
+		<!-- /.col -->
+
+
+		<!-- Doctor's Information -->
+		<div class="col-md-6">
+			<div class="box box-success">
+				<div class="box-header with-border">
+					<i class="fa fa-bullhorn"></i>
+					<h3 class="box-title">Doctor's Information</h3>
+				</div>
+				<!-- /.box-header -->
+				<form class="form-horizontal">
+					<div class="box-body">
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Doctor's Name</label>
+							<div class="col-sm-9">
+								<input class="form-control" ng-model="treatment.doctorId.name"
+									disabled="disabled" type="text">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Address</label>
+							<div class="col-sm-9">
+								<input class="form-control"
+									ng-model="treatment.doctorId.specialist" disabled="disabled"
+									type="text">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Specialist</label>
+							<div class="col-sm-9">
+								<input class="form-control" ng-model="treatment.doctorId.name"
+									disabled="disabled" type="text">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Sex</label>
+							<div class="col-sm-9">
+								<input class="form-control" ng-model="treatment.doctorId.sex"
+									disabled="disabled" type="text">
+							</div>
+						</div>
+					</div>
+					<!-- /.box-footer -->
 				</form>
 				<!-- /.form-body -->
-			 </div>
-			 <!-- /.box -->
-			 <div class="box box-primary">
+			</div>
+		</div>
+		<!-- /.col -->
+	</div>
+
+
+	<!-- ====== Medicine List ====== -->
+	<div class="row">
+		<div class="col-md-6">
+			<div class="box box-success">
+				<div class="box-header with-border">
+					<i class="fa fa-bullhorn"></i>
+					<h3 class="box-title">Prescription Drug List</h3>
+				</div>
+				<!-- /.box-header -->
+				<form class="form-horizontal">
+					<div class="box-body">
+						<div class="form-group">
+							<md-content class="md-padding autocomplete col-md-10"
+								layout="column"> <md-contact-chips
+								ng-model="medicines" md-contacts="querySearch($query)"
+								md-contact-name="name" md-require-match="true"
+								md-highlight-flags="i" filter-selected="filterSelected"
+								placeholder="Enter name medicne"> </md-contact-chips> </md-content>
+						</div>
+					</div>
+					<!-- /.box-body -->
+					<div class="box-footer">
+						<button type="reset" class="btn btn-default">Reset</button>
+						<button type="submit" ng-click="createTreatmentDetail()"
+							class="btn btn-success pull-right">Add Medicine</button>
+					</div>
+					<!-- /.box-footer -->
+				</form>
+				<!-- /.form-body -->
+			</div>
+			<!-- /.box -->
+			<div class="box box-primary">
 				<div class="box-header">
-				   <h3 class="box-title">List Medicine</h3>
+					<h3 class="box-title">List Medicine</h3>
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">
@@ -222,8 +233,94 @@
       </div>
       <!-- /.col -->
    </div>
+					<table
+						class="  table table-bordered  table-striped tableBodyScroll">
+						<thead>
+							<tr>
+								<th>Medicine's Name</th>
+								<th>Diseases</th>
+								<th>Dosage</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="treatmentdt in treatment.treatmentDetailList">
+								<td>{{treatmentdt.medicineId.name}}</td>
+								<td>{{treatmentdt.diseases}}</td>
+								<td>{{treatmentdt.medicineId.dosage}}</td>
+								<td><button
+										ng-click="deleteTreatmentDetail(treatmentdt.id)"
+										class="glyphicon glyphicon-trash btn btn-danger"></button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- /.box-body -->
+			</div>
+		</div>
 
-   <div class="row">
+
+		<!-- Allergic -->
+		<div class="col-md-6">
+			<div class="box box-success">
+				<div class="box-header with-border">
+					<i class="fa fa-bullhorn"></i>
+					<h3 class="box-title">Allergic</h3>
+				</div>
+				<!-- /.box-header -->
+				<form class="form-horizontal">
+					<div class="box-body">
+						<div class="form-group">
+							<md-content class="md-padding autocomplete col-md-10"
+								layout="column"> <md-contact-chips
+								ng-model="allergics" md-contacts="querySearch($query)"
+								md-contact-name="name" md-require-match="true"
+								md-highlight-flags="i" filter-selected="filterSelected"
+								placeholder="Enter name medicne"> </md-contact-chips> </md-content>
+						</div>
+					</div>
+					<!-- /.box-body -->
+					<div class="box-footer">
+						<button type="reset" class="btn btn-default">Reset</button>
+						<button type="submit" ng-click="createAllergics()"
+							class="btn btn-success pull-right">Add Allergic</button>
+					</div>
+					<!-- /.box-footer -->
+				</form>
+				<!-- /.form-body -->
+			</div>
+			<!-- /.box -->
+			<div class="box box-primary">
+				<div class="box-header">
+					<h3 class="box-title">List Allergic</h3>
+				</div>
+				<!-- /.box-header -->
+				<div class="box-body">
+					<table class="table table-bordered  table-striped tableBodyScroll">
+						<thead>
+							<tr>
+								<th>Medicine's Name</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="allergic in treatment.patientId.allergicList">
+								<td>{{allergic.medicineId.name}}</td>
+								<td>
+									<button ng-click="deleteAllergic(allergic.id)"
+										class="glyphicon glyphicon-trash btn btn-danger"></button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- /.box-body -->
+			</div>
+		</div>
+		<!-- /.col -->
+	</div>
+
+	<div class="row">
 
 		<div class="col-md-6">
 			<div class="box box-success">
@@ -244,9 +341,10 @@
 						</div>
 						<div class="form-group">
 							<div class="col-md-6">
-								<input id="file" type="file" fileinput="file" name="file" onchange="ValidateSingleInput(this)"
-									filepreview="filepreview" file-model="myFile" />
-								<button ng-click="uploadFiles()">upload me</button>
+								<input id="file" type="file" fileinput="file" name="file"
+									onchange="ValidateSingleInput(this)" filepreview="filepreview"
+									file-model="myFile" />
+								<button ng-click="uploadFiles()">upload</button>
 							</div>
 
 							<div class="col-md-6">
@@ -265,62 +363,74 @@
 		</div>
 		<!-- /.col -->
 	</div>
-<script>
-var _validFileExtensions = [".jpg", ".jpeg", ".bmp", ".gif", ".png"];    
-function ValidateSingleInput(oInput) {
-    if (oInput.type == "file") {
-        var sFileName = oInput.value;
-         if (sFileName.length > 0) {
-            var blnValid = false;
-            for (var j = 0; j < _validFileExtensions.length; j++) {
-                var sCurExtension = _validFileExtensions[j];
-                if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase() == sCurExtension.toLowerCase()) {
-                    blnValid = true;
-                    break;
-                }
-            }
-             
-            if (!blnValid) {
-            	bootbox.alert({
-        			message: "Sorry, " + sFileName + " is invalid, allowed extensions are: "+ _validFileExtensions.join(", "),
-        			title: "MESSAGE",
-        		    size: 'small'
-        		});
-                oInput.value = "";
-                return false;
-            }
-        }
-    }
-    return true;
-}
-</script>	
-<div class="row">
+	<script>
+		var _validFileExtensions = [ ".jpg", ".jpeg", ".bmp", ".gif", ".png" ];
+		function ValidateSingleInput(oInput) {
+			if (oInput.type == "file") {
+				var sFileName = oInput.value;
+				if (sFileName.length > 0) {
+					var blnValid = false;
+					for (var j = 0; j < _validFileExtensions.length; j++) {
+						var sCurExtension = _validFileExtensions[j];
+						if (sFileName.substr(
+								sFileName.length - sCurExtension.length,
+								sCurExtension.length).toLowerCase() == sCurExtension
+								.toLowerCase()) {
+							blnValid = true;
+							break;
+						}
+					}
+
+					if (!blnValid) {
+						bootbox.alert({
+							message : "Sorry, " + sFileName
+									+ " is invalid, allowed extensions are: "
+									+ _validFileExtensions.join(", "),
+							title : "MESSAGE",
+							size : 'small'
+						});
+						oInput.value = "";
+						return false;
+					}
+				}
+			}
+			return true;
+		}
+	</script>
+	<div class="row">
 		<div class="box-header with-border">
 			<i class="fa fa-file-image-o"></i>
 			<h3 class="box-title">File</h3>
 		</div>
-		<div data-role="page" class="col-md-4 pr" ng-repeat="photo in treatment.fileList">
+		<div data-role="page" class="col-md-4 pr"
+			ng-repeat="photo in treatment.fileList">
 
-<a  data-toggle="modal" data-target=".dialog{{photo.id}}">
-           <img ng-src="data:image/JPEG;base64,{{photo.image}}" width="300" class="img-responsive img-rounded center-block" alt="" />
-       </a>
-       
-       <div class="modal fade dialog{{photo.id}}" tabindex="-1">
-           <div class="modal-dialog modal-lg">
-               <div class="modal-content">
-                   <div class="modal-header">
-                       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                   </div>
-                   <div class="modal-body active">
-                       <img ng-src="data:image/JPEG;base64,{{photo.image}}" style="height:700" class="img-responsive img-rounded center-block" alt="" />
-                   </div>
-               </div>
-           </div>
-       </div>
-</div>
+			<a data-toggle="modal" data-target=".dialog{{photo.id}}"> <img
+				ng-src="data:image/JPEG;base64,{{photo.image}}" width="300"
+				class="img-responsive img-rounded center-block" alt="" />
+
+			</a>
+			<button ng-click="deleteFile(photo.id)" style="position: absolute; left: 45px; bottom: 10px; width:40px;height:30px"
+				class="glyphicon glyphicon-trash btn "></button>
+			<div class="modal fade dialog{{photo.id}}" tabindex="-1">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-hidden="true">x</button>
+						</div>
+						<div class="modal-body active">
+							<img ng-src="data:image/JPEG;base64,{{photo.image}}"
+								style="height: 700"
+								class="img-responsive img-rounded center-block" alt="" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 	</div>
-	
-	
+
+
 </section>
 

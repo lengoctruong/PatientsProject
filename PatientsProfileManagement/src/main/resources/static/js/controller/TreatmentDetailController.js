@@ -1,6 +1,9 @@
 var app = angular.module('myApp');
 app.controller('treatmentDetailController', function(
+
         $scope, $interval, $location,$http,$routeParams,treatmentDetailService,allergicService,fileUpload, historyService,treatmentService) {
+) {
+
 	
 	
 	
@@ -38,10 +41,26 @@ app.controller('treatmentDetailController', function(
 		$scope.treatment = response.data;
 		$scope.treatment.patientId.dob = new Date(response.data.patientId.dob);
 	});
+
 	$http.get("http://localhost:8080/userProfile").then(function(response) {
 		$scope.doctor = response.data;
 	});
 	
+
+	
+////=========Get Treatment DT===========================================
+	$scope.getTreatment = function(id){
+		treatmentService.getOneTreatment(id).then(getTreatmentSuccess,getTreatmentError)
+	}
+	var getTreatmentSuccess = function(data) {
+
+		$scope.treatment = response.data;
+		$scope.treatment.patientId.dob = new Date(response.data.patientId.dob);
+
+	};
+	var getTreatmentError = function(error) {
+	};
+
 ////=========Create allergics list======================================
 	$scope.createAllergics = function(){
 		if($scope.allergics!=null){
@@ -119,6 +138,29 @@ app.controller('treatmentDetailController', function(
 		});
 	};
 	
+	
+	$scope.deleteFile =function(id){
+		treatmentDetailService.deleteFile(id).then(deleteFileSuccess,deleteFileError);
+	};
+	
+	var deleteFileSuccess = function(data) {
+		bootbox.alert({
+			message: "Delete File Success!",
+			title: "MESSAGE",
+		    size: 'small'
+		});
+		$http.get("http://localhost:8080/treatment/" +$routeParams.treatmentId).then(function(response) {
+			$scope.treatment = response.data;
+			$scope.treatment.patientId.dob = new Date(response.data.patientId.dob);
+		});
+	};
+	var deleteFileError = function(error) {
+		bootbox.alert({
+			message: "Delete File Error!",
+			title: "MESSAGE",
+		    size: 'small'
+		});
+	};
 	
 	
 ////==========delete treatment detail=================================
@@ -244,7 +286,8 @@ app.controller('treatmentDetailController', function(
 //        fd.append('description',$scope.treatment);
         var uploadUrl ="/uploadMultipleFile";
         console.log(typeof($scope.treatment));
-        	fileUpload.uploadFileToUrl(file,$scope.treatment.id, uploadUrl) 
+        	fileUpload.uploadFileToUrl(file,$scope.treatment.id, uploadUrl);
+        	
 
     }
 
@@ -260,7 +303,17 @@ app.directive('fileModel', ['$parse', function ($parse) {
             
             element.bind('change', function(){
                 scope.$apply(function(){
-                    modelSetter(scope, element[0].files[0]);
+                	if(element[0].files[0].size>(10*1048576)){
+                		bootbox.alert({
+                			message: "Sorry, "  + " This file is too large,please select file with size less than 10Mb ",
+                			title: "MESSAGE",
+                		    size: 'small'
+                		});
+                		element.val("");
+                	}else{
+                		modelSetter(scope, element[0].files[0]);
+                	}
+                    
                 });
             });
         }
@@ -308,14 +361,19 @@ app.directive("fileinput", [function() {
         },
         link: function(scope, element, attributes) {
           element.bind("change", function(changeEvent) {
-            scope.fileinput = changeEvent.target.files[0];
-            var reader = new FileReader();
-            reader.onload = function(loadEvent) {
-              scope.$apply(function() {
-                scope.filepreview = loadEvent.target.result;
-              });
-            }
-            reader.readAsDataURL(scope.fileinput);
+        	  if(changeEvent.target.files[0].size<(10*1048576)){
+        		  scope.fileinput = changeEvent.target.files[0];
+                  var reader = new FileReader();
+                  reader.onload = function(loadEvent) {
+                    scope.$apply(function() {
+                      scope.filepreview = loadEvent.target.result;
+                    });
+                  }
+                  reader.readAsDataURL(scope.fileinput);
+        	  }
+        	  else{
+        		  return null;
+        	  }
           });
         }
       }
